@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+	mount_uploader :image_url, PictureUploader
 	validates :title, :description, :image_url, presence: true
 	validates :title, uniqueness: true
 	validates :image_url, allow_blank: true, format: {
