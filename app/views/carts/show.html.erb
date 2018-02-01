@@ -1,0 +1,13 @@
+<%if notice%>
+	<aside id="notice"><%= notice %></aside>
+<%end%>
+<h2>Your Pragmatic Cart</h2>
+<ul>
+	<%@cart.line_items.each do |item|%>
+	<li><%= item.product.title %></li>
+	<td><%= link_to 'Remove from Shopping Cart', item, method: :delete, data: { confirm: 'Are you sure?' } %> 
+		<%= link_to 'Empty Shopping Cart', item, method: :clear, data: { confirm: 'Are you sure?' } %></td>
+	<%end%>
+</ul>
+<!-- <%= link_to 'Edit', edit_cart_path(@cart) %> | -->
+<%= link_to 'Back', "/" %>

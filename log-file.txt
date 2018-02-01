@@ -1,0 +1,35 @@
+commit 86e13a75c44556615d125c24be87119f45ed185e
+Author: Alex Venditti <alvenditti@valdosta.edu>
+Date:   Thu Jan 25 14:44:15 2018 -0500
+
+    did figaro
+
+commit e8c4e41cdc3c2aa82635d4b5571195edb92febad
+Author: Alex Venditti <alvenditti@valdosta.edu>
+Date:   Thu Jan 25 14:19:57 2018 -0500
+
+    Forgot to add fog gem
+
+commit bf37da4d5256673656fea54d97c9d9b25cdf7824
+Author: Alex Venditti <alvenditti@valdosta.edu>
+Date:   Thu Jan 25 14:17:34 2018 -0500
+
+    Finished amazon task
+
+commit 008cb77876367223427f9942d2582c1eac484fed
+Author: Alex Venditti <alvenditti@valdosta.edu>
+Date:   Tue Jan 23 14:22:49 2018 -0500
+
+    Added more enteries to db
+
+commit ef67994e099a8e838ecc6cf0aeaa54c125e4b027
+Author: Alex Venditti <alvenditti@valdosta.edu>
+Date:   Tue Jan 23 14:19:05 2018 -0500
+
+    Finished Task C
+
+commit 4475a71794721ed51db034cfc50cbaa753dca24e
+Author: Alex Venditti <alvenditti@valdosta.edu>
+Date:   Tue Jan 23 13:17:30 2018 -0500
+
+    Finished Task A

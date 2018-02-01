@@ -17,6 +17,9 @@
       <nav class="side_nav">
         <ul>
           <li><a href="/">Home</a></li>
+          <% if !(controller_name == "products")%>
+            <li><a href=<%= cart_path(@cart) %>>My Shopping cart</a></li>
+          <%end%>
           <li><a href="/questions">Questions</a></li>
           <li><a href="/news">News</a></li>
           <li><a href="/contact">Contact</a></li>
