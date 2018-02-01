@@ -9,5 +9,15 @@ class StoreController < ApplicationController
 		session[:counter] += 1
 		@counter = session[:counter]
 	end
-  end
+	respond_to do |format|
+	    format.html {
+	        if (params[:spa] && params[:spa] == "true")
+	            render 'index_spa'
+	        # the else case below is by default
+	        # else
+	        #    render 'index'
+	        end
+	    }
+	end
+  end 
 end

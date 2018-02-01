@@ -11,7 +11,7 @@
 		<% @products.each do |product| %>
 			<% cache product do %>
 				<li>
-					<%= image_tag(product.image_url) %>
+					<%= image_tag(product.image_url, height: '176', width: '147') %>
 					<h2><%= product.title %></h2>
 					Popularity: <%= product.popularity%>
 					<p>

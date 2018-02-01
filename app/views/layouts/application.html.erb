@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%= javascript_pack_tag 'application' %>
     <title>Pragprog Books Online Store</title>
     <%= csrf_meta_tags %>
 
@@ -16,7 +17,8 @@
     <section class="content">
       <nav class="side_nav">
         <ul>
-          <li><a href="/">Home</a></li>
+          <li><%= link_to "Home", store_index_path(spa: false) %></li>      
+          <li><%= link_to "Home (SPA)", store_index_path(spa: true) %></li>
           <% if !(controller_name == "products")%>
             <li><a href=<%= cart_path(@cart) %>>My Shopping cart</a></li>
           <%end%>
