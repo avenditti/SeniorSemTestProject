@@ -3,7 +3,7 @@
 <% end %>
 
 <h1>Your Pragmatic Catalog</h1>
-<% if session[:counter] >= 5%>
+<% if session[:counter] >= 100%>
 	<b>You have visited this page <%= pluralize(@counter, "time") %> and have not added anything to your cart</b>
 <% end %>
 <ul class="catalog">

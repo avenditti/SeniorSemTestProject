@@ -2,6 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .store {
+	.spa_entry {
+        td {
+          	min-width: 100px;
+          	text-align:center;
+
+          	p{
+            	margin-left: 0px;
+          	}
+
+      		img {
+	            width: 80px;
+	            margin-right: 5px;
+	            margin-bottom: 5px;
+      		}
+    	}
+  	}
+  	th.sortable {
+        cursor: pointer;
+    }
 	max-width: 80em;
 	ul.catalog {
 		border-top: solid 0.250em;
