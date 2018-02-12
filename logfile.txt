@@ -1,0 +1,71 @@
+commit 0372e91d408e1b05613293b70a07e042e847a90c
+Author: Alex Venditti <alvenditti@valdosta.edu>
+Date:   Thu Feb 8 08:58:54 2018 -0500
+
+    Troubleshooting bugfix
+
+commit cd8d414c7210d493c33afb40ea667a07c39d2135
+Author: Alex Venditti <alvenditti@valdosta.edu>
+Date:   Thu Feb 8 07:34:39 2018 -0500
+
+    Finished Task 3
+
+commit 617c5662bc8cdef825a8d6df00c7d4a00ce0792f
+Author: Alex Venditti <alvenditti@valdosta.edu>
+Date:   Thu Feb 1 16:58:45 2018 -0500
+
+    Reversed Sort order on main page
+
+commit 7f10568f15a9ffd02d94dc7fb5e5d11c93809161
+Author: Alex Venditti <alvenditti@valdosta.edu>
+Date:   Thu Feb 1 16:47:08 2018 -0500
+
+    Fixed bug with react
+
+commit 46abac157f55272228eb9abe4e9542474c3df808
+Author: Alex Venditti <alvenditti@valdosta.edu>
+Date:   Thu Feb 1 12:18:30 2018 -0500
+
+    Troubleshooting heroku issue
+
+commit e83e01bbd74fbdd7dba6df0928ab2b4ba519132b
+Author: Alex Venditti <alvenditti@valdosta.edu>
+Date:   Thu Feb 1 11:19:23 2018 -0500
+
+    Finished task 4 and integrated webpacker, also bug fixed
+
+commit 6a7ba0207e9c9095cf76abcd903a9964cfe7ec29
+Author: Alex Venditti <alvenditti@valdosta.edu>
+Date:   Thu Feb 1 10:34:29 2018 -0500
+
+    Finished part 2
+
+commit e8c4e41cdc3c2aa82635d4b5571195edb92febad
+Author: Alex Venditti <alvenditti@valdosta.edu>
+Date:   Thu Jan 25 14:19:57 2018 -0500
+
+    Forgot to add fog gem
+
+commit bf37da4d5256673656fea54d97c9d9b25cdf7824
+Author: Alex Venditti <alvenditti@valdosta.edu>
+Date:   Thu Jan 25 14:17:34 2018 -0500
+
+    Finished amazon task
+
+commit 008cb77876367223427f9942d2582c1eac484fed
+Author: Alex Venditti <alvenditti@valdosta.edu>
+Date:   Tue Jan 23 14:22:49 2018 -0500
+
+    Added more enteries to db
+
+commit ef67994e099a8e838ecc6cf0aeaa54c125e4b027
+Author: Alex Venditti <alvenditti@valdosta.edu>
+Date:   Tue Jan 23 14:19:05 2018 -0500
+
+    Finished Task C
+
+commit 4475a71794721ed51db034cfc50cbaa753dca24e
+Author: Alex Venditti <alvenditti@valdosta.edu>
+Date:   Tue Jan 23 13:17:30 2018 -0500
+
+    Finished Task A
