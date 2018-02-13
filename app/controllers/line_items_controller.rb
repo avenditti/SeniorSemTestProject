@@ -32,9 +32,11 @@ class LineItemsController < ApplicationController
     product.popularity = product.popularity + 1
     product.update_attributes(:popularity => product.popularity)
     # @line_item = @cart.line_items.build(product: product)
-    @products = Product.all
-      ActionCable.server.broadcast 'products',
-      html: render_to_string('store/index', layout: false)
+    # if !@spa 
+    #   @products = Product.all
+    #   ActionCable.server.broadcast 'products',
+    #   html: render_to_string('store/index', layout: false)
+    # end
     respond_to do |format|
       if @line_item.save
         format.html { redirect_to store_index_url }

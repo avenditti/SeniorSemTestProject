@@ -12,8 +12,7 @@ export default class LineItems extends React.Component {
 
     var line_items = [];
     var self = this;
-    this.props.line_items.forEach(
-      function(lineitem) {
+    this.props.line_items.line_items.forEach(function(lineitem) {
         line_items.push(<LineItem book={lineitem}
                        key={'lineitem' + lineitem.id}
                        handleAddToCart={self.handleAddToCart} />);
@@ -22,7 +21,6 @@ export default class LineItems extends React.Component {
     return(
       <table>
         <tbody>
-          {line_items}
           // render line items
           // render the total price line
         </tbody>

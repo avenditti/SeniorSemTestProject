@@ -3,6 +3,8 @@ import LineItems from './LineItems';
 import axios from 'axios';
 
 export default class Cart extends React.Component {
+
+
   state = {
     line_items: []
   };
@@ -14,11 +16,10 @@ export default class Cart extends React.Component {
     // and update the states with it
     var self = this;
     axios.defaults.headers.common['X-Requested-With'] = "XMLHttpRequest";
-    axios.get('/carts/')
+    axios.get('/carts/' + this.props.id)
         .then(function (response) {
             console.log(response.data);
             self.setState({ line_items: response.data })
-            console.log(self.state.line_items)
 
         })
         .catch(function (error) {
@@ -41,16 +42,14 @@ export default class Cart extends React.Component {
   };
 
  handleAddToCart = (cart) => {
-    // update the states with the "cart" argument
-    // that comes from the line "self.refs.cart.handleAddToCart(response.data);"
-    // in the "Catalog" component
+    this.state.line_items = cart.line_items
   }
 
   render = () => {
     if (this.state.total_price != 0) {
       return(
         <div className="spa_cart">
-          
+          <LineItems line_items={this.state.line_items}/>
         </div>
       )
     }
@@ -63,3 +62,5 @@ export default class Cart extends React.Component {
     }
   }   
 }
+
+          //         

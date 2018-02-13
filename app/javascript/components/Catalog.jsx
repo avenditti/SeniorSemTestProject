@@ -6,7 +6,13 @@ import Cart from './Cart';
 
 export default class Catalog extends React.Component {
 
+    constructor(id) {
+        super(id);
+        this.state.cart_id = id.cart_id
+    }
+
     state = { 
+        cart_id: 0,
         books: [],
         sort: "popularity",
         order: "asc"
@@ -55,7 +61,6 @@ export default class Catalog extends React.Component {
         axios.defaults.headers.common['X-Requested-With'] = "XMLHttpRequest";
         axios.post('/line_items', {product_id: id})
             .then(function (response) {
-                console.log(response);
                 console.log(response.data);
                 self.refs.cart.handleAddToCart(response.data);
                 // window.location = response.headers.location;
@@ -76,7 +81,7 @@ export default class Catalog extends React.Component {
                             <SearchForm handleSearch={this.handleSearch} />
                     </div>
                     <div className="col-md-6 pull-right">
-                        <Cart ref="cart" id={this.props.cart_id}/>
+                        <Cart ref="cart" id={this.state.cart_id}/>
                     </div>
                 </div>
                 <div className="row">
