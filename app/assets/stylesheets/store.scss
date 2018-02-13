@@ -2,6 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .store {
+	.spa_cart {    
+	    text-align: right;
+
+	    float: right;
+	    padding-bottom: 5px;
+
+	    .item_price, .total_line {
+	      text-align: right;
+	    }
+
+	    .total_line .total_cell {
+	      font-weight: bold;
+	      border-top: 1px solid #595;
+	    }
+
+	    input {
+	      color: buttontext;
+	    }
+    }
 	.spa_entry {
         td {
           	min-width: 100px;

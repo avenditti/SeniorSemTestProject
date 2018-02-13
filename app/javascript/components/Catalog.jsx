@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import BookList from './BookList';
 import SearchForm from './SearchForm';
+import Cart from './Cart';
 
 export default class Catalog extends React.Component {
 
@@ -51,12 +52,13 @@ export default class Catalog extends React.Component {
     handleAddToCart = (id) => {
 
         var self = this;
-
         axios.defaults.headers.common['X-Requested-With'] = "XMLHttpRequest";
         axios.post('/line_items', {product_id: id})
             .then(function (response) {
                 console.log(response);
-                window.location = response.headers.location;
+                console.log(response.data);
+                self.refs.cart.handleAddToCart(response.data);
+                // window.location = response.headers.location;
              })
             .catch(function (error) {
                 console.log(error);
@@ -72,6 +74,9 @@ export default class Catalog extends React.Component {
                 <div className="row">
                     <div className="col-md-12">
                             <SearchForm handleSearch={this.handleSearch} />
+                    </div>
+                    <div className="col-md-6 pull-right">
+                        <Cart ref="cart" id={this.props.cart_id}/>
                     </div>
                 </div>
                 <div className="row">

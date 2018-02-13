@@ -5,4 +5,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :products
   get 'search', to: 'store#search'
+  resources :line_items do
+  	member do
+  		put 'decrement'
+  	end
+  end
 end

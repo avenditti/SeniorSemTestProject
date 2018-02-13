@@ -32,11 +32,14 @@ class LineItemsController < ApplicationController
     product.popularity = product.popularity + 1
     product.update_attributes(:popularity => product.popularity)
     # @line_item = @cart.line_items.build(product: product)
+    @products = Product.all
+      ActionCable.server.broadcast 'products',
+      html: render_to_string('store/index', layout: false)
     respond_to do |format|
       if @line_item.save
         format.html { redirect_to store_index_url }
         format.js { @current_item = @line_item }
-        format.json { redirect_to cart_path(@line_item.cart)}
+        format.json { }  
       else
         format.html { render :new }
         format.json { render json: @line_item.errors, status: :unprocessable_entity }
@@ -65,6 +68,31 @@ class LineItemsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to @line_item.cart, notice: 'Line item was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def decrement
+    line_item = LineItem.find_by_id(params[:id])
+    @cart = line_item.cart
+    if line_item.quantity - 1 == 0  
+      line_item.destroy
+      if line_item.cart.line_items.size == 0
+        @cart.destroy
+      end
+    else
+      line_item.quantity -= 1
+      line_item.update_attributes(:quantity => line_item.quantity)
+    end
+    line_item.product.popularity -= 1
+    line_item.product.update_attributes(:popularity => line_item.product.popularity)
+    @products = Product.all
+    ActionCable.server.broadcast 'products',
+    html: render_to_string('store/index', layout: false)
+    respond_to do |format|
+      format.html { redirect_to store_index_url, notice: 'Item Removed' }
+      format.js { @current_item = @line_item }
+      format.json { head :no_content }
+
     end
   end
 
