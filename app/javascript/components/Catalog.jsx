@@ -43,7 +43,6 @@ export default class Catalog extends React.Component {
 
     componentDidMount = () => {
         var self = this;
-
         axios.defaults.headers.common['X-Requested-With'] = "XMLHttpRequest";
         axios.get('/')
             .then(function (response) {
@@ -73,7 +72,6 @@ export default class Catalog extends React.Component {
     };
     
     render = () => {
-        
         return (
             <div className="container">
                 <div className="row">

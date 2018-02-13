@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'fog'
-
+gem 'redis', "~> 3.3.5" 
 gem 'webpacker'
 gem 'webpacker-react', '~> 0.3.2'
 gem 'carrierwave'
