@@ -1,3 +1,33 @@
+commit ebdd74801a0d5aaf0bbeaaca4cb4bedf16d3af3e
+Author: Alex Venditti <alvenditti@valdosta.edu>
+Date:   Tue Feb 13 20:03:22 2018 -0500
+
+    Bug Fixes for Task 3
+
+commit 1653347ca535aa28059cec3b4b3aaeaf32263b66
+Author: Alex Venditti <alvenditti@valdosta.edu>
+Date:   Tue Feb 13 01:23:07 2018 -0500
+
+    Finished Task 3
+
+commit a64306f6fc780b9e046d03e3e2874d24ebce577b
+Author: Alex Venditti <alvenditti@valdosta.edu>
+Date:   Mon Feb 12 23:29:46 2018 -0500
+
+    Work on task 3
+
+commit 376b1a40d1dc54bc7412b9a11bd73c9d6539168b
+Author: Alex Venditti <alvenditti@valdosta.edu>
+Date:   Mon Feb 12 22:13:31 2018 -0500
+
+    Finished task 2 started task 3
+
+commit 2a0595d9fc1eb98450925dc870c0bbc1c25bed0d
+Author: Alex Venditti <alvenditti@valdosta.edu>
+Date:   Mon Feb 12 17:27:08 2018 -0500
+
+    Finished Part 1
+
 commit 0372e91d408e1b05613293b70a07e042e847a90c
 Author: Alex Venditti <alvenditti@valdosta.edu>
 Date:   Thu Feb 8 08:58:54 2018 -0500
