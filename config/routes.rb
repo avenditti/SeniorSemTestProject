@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'search', to: 'store#search'
   resources :line_items do
   	member do
-  		put 'decrement'
+  		patch 'decrement'
   	end
   end
 end

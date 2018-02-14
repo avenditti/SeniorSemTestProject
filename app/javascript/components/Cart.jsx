@@ -5,7 +5,7 @@ import axios from 'axios';
 export default class Cart extends React.Component {
   state = {
     id: 0,
-    line_items: [], 
+    line_items: [],
     total_price: 0
   };
 

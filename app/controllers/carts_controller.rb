@@ -1,5 +1,6 @@
 class CartsController < ApplicationController
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
   def invalid_cart
     logger.error "Attempt to access invalid cart #{params[:id]}"
@@ -74,7 +75,8 @@ end
     end
     respond_to do |format|
       format.html { redirect_to store_index_url, notice: 'Your cart is currently empty' }
-      format.json { head :no_content }
+      format.js
+      format.json { }
     end
   end
 

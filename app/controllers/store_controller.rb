@@ -10,15 +10,18 @@ class StoreController < ApplicationController
 	end
 	if (!params[:spa] || params[:spa] == "false")
       @products = Product.order('popularity DESC')
+      
     end
     respond_to do |format|
       format.html {
           if (params[:spa] && params[:spa] == "true")
+              session[:spa] = true;
               @spa = true
               render 'index_spa'
           # the else case below is by default
-          # else
-          #    render 'index'
+          else
+            session[:spa] = false;
+            render 'index'
           end
       }
 

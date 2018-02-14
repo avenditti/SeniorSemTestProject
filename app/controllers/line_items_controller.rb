@@ -32,11 +32,11 @@ class LineItemsController < ApplicationController
     product.popularity = product.popularity + 1
     product.update_attributes(:popularity => product.popularity)
     # @line_item = @cart.line_items.build(product: product)
-    # if !@spa 
-    #   @products = Product.all
-    #   ActionCable.server.broadcast 'products',
-    #   html: render_to_string('store/index', layout: false)
-    # end
+    if !session[:spa]
+      @products = Product.all
+      ActionCable.server.broadcast 'products',
+      html: render_to_string('store/index', layout: false)
+    end
     respond_to do |format|
       if @line_item.save
         format.html { redirect_to store_index_url }
@@ -69,7 +69,7 @@ class LineItemsController < ApplicationController
     @line_item.destroy
     respond_to do |format|
       format.html { redirect_to @line_item.cart, notice: 'Line item was successfully destroyed.' }
-      format.json { head :no_content }
+      format.json { }
     end
   end
 
@@ -87,13 +87,15 @@ class LineItemsController < ApplicationController
     end
     line_item.product.popularity -= 1
     line_item.product.update_attributes(:popularity => line_item.product.popularity)
-    @products = Product.all
-    ActionCable.server.broadcast 'products',
-    html: render_to_string('store/index', layout: false)
+    if !session[:spa]
+      @products = Product.all
+      ActionCable.server.broadcast 'products',
+      html: render_to_string('store/index', layout: false)
+    end
     respond_to do |format|
       format.html { redirect_to store_index_url, notice: 'Item Removed' }
       format.js { @current_item = @line_item }
-      format.json { head :no_content }
+      format.json { }
 
     end
   end
