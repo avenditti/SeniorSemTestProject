@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'faker'
+gem 'kaminari'
 gem 'fog'
 gem 'redis', "~> 3.3.5" 
 gem 'webpacker'
