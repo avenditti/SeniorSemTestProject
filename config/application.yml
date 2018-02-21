@@ -9,10 +9,13 @@
 # production:
 #   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
-User name,Password,Access key ID,Secret access key,Console login link
-db-user,Pm19OS(URx_N,AKIAI2UGRQMISUZZQ3DA,xRwTrZ6ykr3hhWupI1IuWkg40Cyq3yute5M78pHp,https://046726606966.signin.aws.amazon.com/console
+
 AWS_ACCESS_KEY: "paste-aws-access-key-here"
 
 AWS_SECRET_KEY: "paste-aws-secret-key-here"
 
 AWS_BUCKET: "enter-your-bucket-name-here"
+
+SENDGRID_USERNAME: alvenditti
+
+SENDGRID_PASSWORD: A13972684

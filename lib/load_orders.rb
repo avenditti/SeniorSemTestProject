@@ -10,3 +10,4 @@ Order.delete_all
 		pay_type: pay_type                 
 		)
 end
+

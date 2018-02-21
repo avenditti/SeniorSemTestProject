@@ -15,5 +15,10 @@ class Order < ApplicationRecord
       item.cart_id = nil
       line_items << item
     end
+
   end
+  
+  def total_price
+		line_items.to_a.sum { |item| item.total_price }
+	end
 end
