@@ -8,6 +8,29 @@
  </ul>
 </li>
 <% if account_signed_in? %>
+<% if current_account.accountable_type == "SuperAccount" %>
+ <li><%= link_to 'Admin Dashboard', admin_root_path %></li>
+
+ <% else %>
+
+ </li>
+ <li role="presentation" class="dropdown">
+ <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+ Resources <span class="caret"></span>
+ </a>
+ <ul class="dropdown-menu">
+ <% if current_account.accountable_type == "Seller" %>
+ <li><%= link_to 'My Products', seller_products_path(current_account.accountable_id) %></li>
+ <li><%= link_to 'My Orders', orders_seller_path(current_account.accountable_id) %></li>
+ <% else %>
+ <li><%= link_to 'My Orders', buyer_orders_path(current_account.accountable_id) %></li>
+ <% end %>
+ </ul>
+</li>
+ 
+<% end %>
+
+<% if current_account.accountable_type != "SuperAccount" %>
  <li role="presentation" class="dropdown">
  <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
  Settings (<%= (current_account.accountable.name.nil? or current_account.accountable.name == "") ? "No Name" : current_account.accountable.name %>) 
@@ -23,22 +46,8 @@
  	
  </li>
  </ul>
- </li>
- <li role="presentation" class="dropdown">
- <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
- Resources <span class="caret"></span>
- </a>
- <ul class="dropdown-menu">
- <% if current_account.accountable_type == "Seller" %>
- <li><%= link_to 'My Products', seller_products_path(current_account.accountable_id) %></li>
- <li><%= link_to 'My Orders', orders_seller_path(current_account.accountable_id) %></li>
- <% else %>
- <li><%= link_to 'My Orders', buyer_orders_path(current_account.accountable_id) %></li>
- <% end %>
- </ul>
-</li>
- <li><%= link_to 'Sign out', destroy_account_session_path, :method=>'delete' %>
- 	
+<% end %>
+<li><%= link_to 'Sign out', destroy_account_session_path, :method=>'delete' %>
  </li>
 <% else %>
  <li><%= link_to 'Sign in', new_account_session_path %></li>

@@ -4,4 +4,6 @@ class Account < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
  	belongs_to :accountable, polymorphic: true
+ 	ACCOUNT_TYPES=["SuperAccount", "Buyer", "Seller"] 
+ 	
 end
