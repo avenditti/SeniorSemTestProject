@@ -24,12 +24,14 @@ export default class Book extends React.Component {
         <td dangerouslySetInnerHTML={{__html: this.props.book.description}}></td>
         <td>{this.props.book.price}</td>
         <td>{this.props.book.popularity}</td>       
-        <td>
+        { this.props.seller ? <td /> :
+         <td>
           <a className="btn btn-primary btn-xs"
-             onClick={this.handleAddToCart} >
+            onClick={this.handleAddToCart} >
             Add to Cart
           </a>
-        </td> 
+          </td>
+        } 
       </tr>
     )
   };

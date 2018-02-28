@@ -19,7 +19,9 @@
 					</p>
 					<div class="price">
 						<%= number_to_currency(product.price) %>
-						<%=button_to'Add to Cart', line_items_path(product_id:product), remote: true %>
+						<% if current_account.nil? or current_account.accountable_type == "Buyer"%>
+							<%= button_to 'Add to Cart', line_items_path(product_id: product), remote: true %>
+						<% end %>
 					</div>
 				</li>
 			<% end %>

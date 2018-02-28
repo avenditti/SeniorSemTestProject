@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :accounts, :controllers => { :registrations => 'registrations' }
   resources :orders
   resources :line_items
   resources :carts
@@ -12,4 +13,16 @@ Rails.application.routes.draw do
   		patch 'decrement'
   	end
   end
+
+  resources :sellers do
+    resources :products
+    member do
+      get 'orders', to: 'line_items#show_orders_for_seller'
+    end
+  end
+  resources :buyers do
+    resources :orders
+  end
+  resources :buyers, only: [:edit, :update]
+  resources :sellers, only: [:edit, :update]
 end
