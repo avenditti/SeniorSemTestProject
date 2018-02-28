@@ -18,7 +18,13 @@ export default class Cart extends React.Component {
         console.log(response.data);
         self.setState({ id: response.data.id });
         self.setState({ total_price: response.data.total_price });
-        self.setState({ line_items: response.data.line_items });
+        if(response.data.line_items != undefined) {
+          self.setState({ line_items: response.data.line_items });
+        } else {
+          self.setState({ line_items: [] });
+        }
+
+
       })
       .catch(function (error) {
         console.log(error);
@@ -87,6 +93,7 @@ export default class Cart extends React.Component {
   };
 
  render = () => {
+  console.log(this.state.line_items)
     if (this.state.total_price != 0) {
       return(
         <div className="spa_cart">

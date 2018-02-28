@@ -10,7 +10,6 @@ export default class LineItems extends React.Component {
     var line_items = [];
 
     var self = this;
-
     this.props.line_items.forEach(function(line_item) {
       line_items.push(<LineItem line_item={line_item}
                        handleRemoveFromCart={self.handleRemoveFromCart}

@@ -1,3 +1,15 @@
+commit 9598d841b49173f5ce780a405c069fd102a132ce
+Author: Alex Venditti <alvenditti@valdosta.edu>
+Date:   Wed Feb 28 18:10:58 2018 -0500
+
+    Finished Task VI
+
+commit ef02291010f49852375dd219359ac241124875a8
+Author: Alex Venditti <alvenditti@valdosta.edu>
+Date:   Wed Feb 28 17:15:37 2018 -0500
+
+    Finished Part V
+
 commit 96a3ded47be8d450ac91df801a221d2b0046e448
 Author: Alex Venditti <alvenditti@valdosta.edu>
 Date:   Wed Feb 21 18:30:17 2018 -0500

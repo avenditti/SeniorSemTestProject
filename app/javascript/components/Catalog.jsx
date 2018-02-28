@@ -83,9 +83,7 @@ export default class Catalog extends React.Component {
                             <SearchForm handleSearch={this.handleSearch} />
                     </div>
                     <div className="col-md-6 pull-right">
-                        <Cart ref="cart" id={this.state.cart_id}
-                                        updatePop={this.updatePop} />
-
+                        <Cart ref="cart" id={this.state.cart_id}/>
                     </div>
                 </div>
                 <div className="row">

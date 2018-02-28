@@ -1,14 +1,8 @@
-
-<p id="notice"><%= notice %></p>
-<% if account_signed_in? and ( current_account.accountable_type == "Seller" o
-r current_account.accountable_type == "SuperAccount")%>
- <%= react_component("Catalog", props: {catalog: @products,
- seller: true,
- cart_id: @cart.id}, prerender: fal
-se) %>
+<% if notice %>
+	<aside id="notice"><%= notice %></aside>
+<% end %>
+<% if account_signed_in? and ( current_account.accountable_type == "Seller" or current_account.accountable_type == "SuperAccount")%>
+ <%= react_component("Catalog", cart_id: @cart.id, prerender: false) %>
 <% else %>
- <%= react_component("Catalog", props: {catalog: @products,
- seller: false,
- cart_id: @cart.id}, prerender: fal
-se) %>
+ <%= react_component("Catalog", cart_id: @cart.id, prerender: false) %>
 <% end %>
